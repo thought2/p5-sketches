@@ -1,4 +1,10 @@
-build:
+export PATH := $(shell pwd)/node_modules/.bin:$(PATH)
+
+clean:
 	rm -rf dist
-	tsc --outfile dist/index.js src/index.ts
-	cp src/index.html dist
+
+build: clean
+	parcel build --public-url "." src/index.html
+
+dev:
+	parcel src/index.html
