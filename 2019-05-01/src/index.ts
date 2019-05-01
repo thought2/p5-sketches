@@ -19,8 +19,9 @@ new p5((p: p5) => {
     img: p5.Image;
     size: p5.Vector;
 
-    constructor(args: { img: p5.Image; size: p5.Vector }) {
-      Object.assign(this, args, { pos: p.createVector(0, 0) });
+    constructor({ img }: { img: p5.Image; size: p5.Vector }) {
+      this.img = img;
+      this.pos = p.createVector(0, 0);
       return this;
     }
 
